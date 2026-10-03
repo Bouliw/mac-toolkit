@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>__PREFIX__.headset-guard</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>__HOME__/Library/Scripts/mac-toolkit/headset-guard/headset-guard</string>
+	</array>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>HEADSET_NAME</key>
+		<string>__HEADSET_NAME__</string>
+	</dict>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>ProcessType</key>
+	<string>Interactive</string>
+	<key>LimitLoadToSessionType</key>
+	<string>Aqua</string>
+</dict>
+</plist>

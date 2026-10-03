@@ -1,0 +1,7 @@
+#!/bin/sh
+# Metal performance HUD in games, reduced to a small FPS counter in the top-right corner.
+launchctl setenv MTL_HUD_ENABLED 1
+launchctl setenv MTL_HUD_ELEMENTS fps
+launchctl setenv MTL_HUD_SCALE 0.1
+launchctl setenv MTL_HUD_ALIGNMENT topright
+launchctl setenv MTL_HUD_OPACITY 0.85

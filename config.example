@@ -1,0 +1,16 @@
+# mac-toolkit settings, read from ~/.config/mac-toolkit/config (install.sh creates and fills it).
+
+# Send to TV: LG webOS TV in developer mode, set up with ares-cli (ares-setup-device, ares-novacom --getkey)
+TV_ARES_DEVICE="tv"                   # device name in ares-setup-device (install.sh reads its key)
+TV_IP=""                              # TV IP address, taken from ares-cli when empty
+TV_MAC=""                             # MAC address, to wake the TV over the network (optional)
+TV_SSH_PORT="9922"                    # developer-mode SSH access, taken from ares-cli
+TV_SSH_USER="prisoner"
+TV_APP_YOUTUBE="youtube.leanback.v4"  # YouTube app on the TV
+TV_APP_TWITCH="twitch.adamffdev.v1"   # Twitch app on the TV (launched with a "channel" parameter)
+
+# HeadsetGuard: name (or part of the name) of the headset; empty = any Bluetooth headset
+HEADSET_NAME=""
+
+# WallperSync: folder for the wallpaper frames
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
