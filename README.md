@@ -11,7 +11,7 @@ Small tools I use every day on my Mac. Most run quietly in the background; the o
 | **Download Video** | Share menu action: downloads a video with yt-dlp in the best quality. VP9/AV1 files are converted to HEVC on the media engine so QuickTime and Final Cut can open them. yt-dlp is updated daily. |
 | **Send to TV** | Share menu action: sends the YouTube video open in Safari, at the current timestamp, or a Twitch channel to an LG webOS TV. Pauses Safari and wakes the TV with Wake-on-LAN. |
 | **Auto PiP** | Safari userscript: the playing video goes picture-in-picture when you switch tabs or desktops and comes back when you return. Full screen is left alone. |
-| **WallperSync** | Keeps the static system wallpaper (Mission Control, desktop swipes) in sync with the live wallpaper set in Wallper. |
+| **WallperSync** | Keeps the system wallpaper (lock screen, Mission Control, desktop swipes) in sync with the live wallpaper set in Wallper. With Wallper's lock screen option on (macOS 26+), the lock screen stays animated; otherwise a still frame of the video is used. |
 | **finetune-patch** | Build script for FineTune with its audio device management removed. See [finetune-patch](finetune-patch). |
 
 ## Requirements
