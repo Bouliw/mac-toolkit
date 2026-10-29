@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/banner-dark.png">
+  <img src="docs/banner-light.png" alt="mac-toolkit" width="100%">
+</picture>
+
 # mac-toolkit
 
 Small tools I use every day on my Mac. Most run quietly in the background; the others live in the Finder's right-click menu or in Safari's Share menu.
