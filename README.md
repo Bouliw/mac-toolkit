@@ -1,5 +1,7 @@
 # mac-toolkit
 
+[![Tests](https://github.com/Bouliw/mac-toolkit/actions/workflows/tests.yml/badge.svg)](https://github.com/Bouliw/mac-toolkit/actions/workflows/tests.yml)
+
 Small tools I use every day on my Mac. Most run quietly in the background; the others live in the Finder's right-click menu or in Safari's Share menu.
 
 | Tool | What it does |
