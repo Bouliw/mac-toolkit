@@ -1,0 +1,45 @@
+# Runs on every push and pull request, on a Mac: the shell scripts parse, the plists and the userscript are
+# valid, the Swift tools build as install.sh builds them, then the unit tests replay the link cleaning rules,
+# Office metadata stripping, the FineTune patch, the wallpaper switching, the shortcut and the agents.
+# No Bluetooth, clipboard, TV, Wallper, network, Homebrew or permission needed.
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: macos-15
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Shell scripts parse
+        run: |
+          # each script is checked with the shell of its shebang
+          git ls-files -z | while IFS= read -r -d '' f; do
+            case "$(head -n 1 "$f")" in
+              '#!/bin/zsh') zsh -n "$f" ;;
+              '#!/bin/sh') sh -n "$f" ;;
+              *) continue ;;
+            esac || { echo "syntax error in $f"; exit 1; }
+            echo "ok $f"
+          done
+      - name: Plists and workflows are valid
+        run: plutil -lint agents/*.plist services/*/Contents/Info.plist services/*/Contents/document.wflow
+      - name: Userscript parses
+        run: node --check safari/auto-pip.user.js
+      - name: Swift tools build
+        run: |
+          for src in clean-links/clean-links headset-guard/headset-guard wallper-sync/wallper-frame; do
+            swiftc -O "$src.swift" -o "$RUNNER_TEMP/$(basename "$src")"
+          done
+      - name: Tests
+        env:
+          CLEAN_LINKS: ${{ runner.temp }}/clean-links
+        run: /usr/bin/python3 -m unittest discover -s tests -v
