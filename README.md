@@ -5,7 +5,7 @@
 
 # mac-toolkit
 
-[![Tests](https://github.com/Bouliw/mac-toolkit/actions/workflows/tests.yml/badge.svg)](https://github.com/Bouliw/mac-toolkit/actions/workflows/tests.yml)
+[![Tests](https://github.com/Bouliw/mac-toolkit/actions/workflows/tests.yml/badge.svg)](https://github.com/Bouliw/mac-toolkit/actions/workflows/tests.yml) [![License](https://img.shields.io/github/license/Bouliw/mac-toolkit)](LICENSE)
 
 Small tools I use every day on my Mac. Most run quietly in the background; the others live in the Finder's right-click menu or in Safari's Share menu.
 
